@@ -5,43 +5,46 @@ This document outlines the core financial terminology, provincial accounting sta
 ## 1. Core Municipal Accounting Terms
 
 ### Amortization & Depreciation
-* **Category:** Budgets & Accounting (Schedule 40 Line 9910)
-* **Detailed Explanation & Context:** The systematic annual expense accounting for the physical aging and consumption of municipal infrastructure over its lifespan. Amortization is the annual non-cash accounting expense recognizing that roads, water pipes, fire engines, and civic buildings lose useful life every day due to weather, traffic, and age. Under PSAB rules, this cost must be recorded in municipal financial statements even though no cash leaves the city's bank account that day. 
-* **Ontario Calculation Example:** A fleet of 50 transit buses purchased for $35,000,000 with a rated operating life of 14 years equates to an annual amortization expense of $2,500,000.
-* **Why It Matters to Taxpayers:** When councils cut "contributions to capital reserves" to keep property tax hikes artificially low, they are essentially ignoring amortization. The assets continue to age, creating deferred maintenance bills that are passed on to future generations.
-* **Regulatory Authority:** PSAB Handbook PS 3150; MMAH FIR Guidelines.
+- **Category:** Budgets & Accounting (Schedule 40 Line 9910)
+- **Detailed Explanation & Context:** The systematic annual expense accounting for the physical aging and consumption of municipal infrastructure over its lifespan. Amortization is the annual non-cash accounting expense recognizing that roads, water pipes, fire engines, and civic buildings lose useful life every day due to weather, traffic, and age. Under Public Sector Accounting Board (PSAB) Section 3150 rules, this cost must be recorded in municipal financial statements even though no cash leaves the city's bank account that day. 
+- **Ontario Calculation Example:** A fleet of 50 transit buses purchased for $35,000,000 with a rated operating life of 14 years equates to an annual amortization expense of $2,500,000.
+- **Why It Matters to Taxpayers:** When councils cut "contributions to capital reserves" to keep property tax hikes artificially low, they are essentially ignoring amortization. The assets continue to age, creating deferred maintenance bills that are passed on to future generations.
+- **Regulatory Authority:** PSAB Handbook PS 3150; MMAH FIR Guidelines.
 
 ### Annual Accounting Surplus / (Deficit)
-* **Category:** Budgets & Accounting (Schedule 10 Line 2099)
-* **Detailed Explanation & Context:** The bottom-line difference on the Statement of Operations between total annual revenues and total annual accounting expenses. Under PSAB accounting, the annual surplus reported in municipal audited financial statements does NOT equal extra cash sitting in the mayor's desk. It reflects total revenues (including capital grants, developer contributions, and land donations) minus total operating expenses and amortization. 
-* **Ontario Calculation Example:** If a city receives $400M in revenue (including $60M in developer capital grants) and incurs $330M in expenses and amortization, the accounting surplus is $70M. Most of this $70M is legally locked into capital projects or obligatory reserves; it cannot be refunded as cash.
-* **Why It Matters to Taxpayers:** Politicians and media frequently misinterpret an accounting surplus as "overtaxation". Understanding that development charges and senior government infrastructure grants inflate this accounting number prevents misinformed budget debates.
+- **Category:** Budgets & Accounting (Schedule 10 Line 2099)
+- **Detailed Explanation & Context:** The bottom-line difference on the Statement of Operations between total annual revenues and total annual accounting expenses. Under Public Sector Accounting Board (PSAB) accounting, the annual surplus reported in municipal audited financial statements does NOT equal extra cash sitting in the mayor's desk. It reflects total revenues (including capital grants, developer contributions, and land donations) minus total operating expenses and amortization. 
+- **Ontario Calculation Example:** If a city receives $400M in revenue (including $60M in developer capital grants) and incurs $330M in expenses and amortization, the accounting surplus is $70M. Most of this $70M is legally locked into capital projects or obligatory reserves; it cannot be refunded as cash.
+- **Why It Matters to Taxpayers:** Politicians and media frequently misinterpret an accounting surplus as "overtaxation". Understanding that development charges and senior government infrastructure grants inflate this accounting number prevents misinformed budget debates.
 
 ### Net Tax Levy
-* **Category:** Operating Budget
-* **Detailed Explanation & Context:** The portion of the Operating Budget that is paid by the tax levy after all other funding sources, including grants, user rates, and user fees, are considered. Your property tax bill only pays the "net levy" required after these fees and subsidies are applied.
+- **Category:** Operating Budget
+- **Detailed Explanation & Context:** The portion of the Operating Budget that is paid by the tax levy after all other funding sources, including grants, user rates, and user fees, are considered. Your property tax bill only pays the "net levy" required after these fees and subsidies are applied.
 
 ### Direct Taxpayer Reliance
-* **Category:** Revenue Breakdown
-* **Detailed Explanation & Context:** A metric that quantifies the degree to which a municipal corporation depends on its direct taxpayers versus external grants or user fees to fund its operations. 
+- **Category:** Revenue Breakdown
+- **Detailed Explanation & Context:** A metric that quantifies the degree to which a municipal corporation depends on its direct taxpayers versus external grants or user fees to fund its operations. 
 
 ## 2. Debt & Solvency Metrics
 
 ### Annual Repayment Limit (ARL)
-* **Category:** Debt Capacity (Schedule 81)
-* **Detailed Explanation & Context:** The provincial statutory ceiling dictating how much a municipality can borrow. The limit is capped at 25% of the municipality's own-source revenues. TaxWatchdog monitors the ARL usage to calculate "Borrowing Headroom"—the capacity a municipality has available before hitting this 25.0% ceiling.
+- **Category:** Debt Capacity (Schedule 81)
+- **Detailed Explanation & Context:** The provincial statutory ceiling dictating how much a municipality can borrow. The limit is capped at 25% of the municipality's own-source revenues. TaxWatchdog monitors the ARL usage to calculate "Borrowing Headroom"—the capacity a municipality has available before hitting this 25.0% ceiling.
 
 ### Reserve-to-Debt Ratio
-* **Category:** Balance Sheet Solvency (Schedules 60 & 74)
-* **Detailed Explanation & Context:** A solvency metric calculated by comparing a municipality's audited Capital Reserves (Schedule 60) against its Accumulated Long-Term Liabilities (Schedule 74). It highlights the net reserve cushion available per resident.
+- **Category:** Balance Sheet Solvency (Schedules 60 & 74)
+- **Detailed Explanation & Context:** A solvency metric calculated by comparing a municipality's audited Capital Reserves (Schedule 60) against its Accumulated Long-Term Liabilities (Schedule 74). It highlights the net reserve cushion available per resident.
 
 ## 3. TaxWatchdog Engines & Architecture
 
 ### Two-Tier Boundary Calibration
-* **Detailed Explanation & Context:** TaxWatchdog's proprietary logic for aligning and appropriately allocating financial data between lower-tier (e.g., City of Mississauga) and upper-tier (e.g., Peel Region) municipalities. This ensures accurate cost attribution without double-counting expenditures.
+- **Detailed Explanation & Context:** TaxWatchdog's proprietary logic for aligning and appropriately allocating financial data between lower-tier (e.g., City of Mississauga) and upper-tier (e.g., Peel Region) municipalities. Comparing a single-tier city against a lower-tier municipality on raw line items yields an inaccurate comparison because regional upper-tier spending is omitted, while naively adding them causes regional double-counting. The calibration engine apportions upper-tier regional levies across constituent municipalities using statutory Current Value Assessment (CVA) ratios to produce accurate, consolidated per-household figures.
 
 ### Consolidated Citizen Cost Engine
-* **Detailed Explanation & Context:** The platform's core processing model that aggregates all relevant regional, county, and local taxes to calculate the true, combined financial burden placed on a single taxpayer in a specific geographical boundary.
+- **Detailed Explanation & Context:** The platform's core processing model that aggregates all relevant regional, county, and local taxes to calculate the true, combined financial burden placed on a single taxpayer in a specific geographical boundary. This engine normalizes the data across the "Big 6" property tax drivers[cite: 1] to ensure an apples-to-apples comparison between single-tier and two-tier municipalities.
+
+### Current Value Assessment (CVA) Ratios
+- **Detailed Explanation & Context:** The statutory methodology used to determine the proportionate share of an upper-tier municipality's costs that each constituent lower-tier municipality must bear. TaxWatchdog utilizes these historical CVA ratios to accurately break down consolidated regional expenses back down to the local taxpayer level.
 
 ### In-Browser Data Engine (DuckDB-WASM)
-* **Detailed Explanation & Context:** The WebAssembly-based analytical SQL engine utilized by TaxWatchdog. Rather than relying on external servers, TaxWatchdog pre-computes 25 years of data into a highly compressed seed file, allowing DuckDB-WASM to execute complex financial queries and comparative benchmarks instantaneously directly inside the user's browser.
+- **Detailed Explanation & Context:** The WebAssembly-based analytical SQL engine utilized by TaxWatchdog. Rather than relying on external servers, TaxWatchdog pre-computes 25 years of data into a highly compressed seed file, allowing DuckDB-WASM to execute complex financial queries and comparative benchmarks instantaneously directly inside the user's browser.
